@@ -5,7 +5,7 @@
   "files": [
     "dist"
   ],
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": {
     "name": "Pascal Syma",
     "email": "npm@syma.dev",
@@ -48,5 +48,8 @@
   },
   "engines": {
     "node": ">=16.0.0"
-  }
+  },
+  "keywords": [
+    "hono", "server-timing", "timing", "metrics"
+  ]
 }
