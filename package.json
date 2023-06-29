@@ -1,11 +1,11 @@
 {
   "name": "@puazzi/hono-timing",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "dist/timing.js",
+  "types": "dist/timing.d.ts",
   "files": [
     "dist"
   ],
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": {
     "name": "Pascal Syma",
     "email": "npm@syma.dev",

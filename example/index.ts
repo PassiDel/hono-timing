@@ -1,7 +1,6 @@
 import { serve } from '@hono/node-server';
 import { Hono } from 'hono';
-
-import { timing } from '../dist/timing';
+import { timing } from '@puazzi/hono-timing';
 
 const app = new Hono();
 app.use('*', timing());

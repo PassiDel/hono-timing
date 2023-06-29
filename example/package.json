@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@hono/node-server": "^1.0.1",
-    "@puazzi/hono-timing": "file:..",
+    "@puazzi/hono-timing": "^0.0.3",
     "hono": "^3.2.7"
   },
   "devDependencies": {
