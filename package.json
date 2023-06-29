@@ -50,6 +50,9 @@
     "node": ">=16.0.0"
   },
   "keywords": [
-    "hono", "server-timing", "timing", "metrics"
+    "hono",
+    "server-timing",
+    "timing",
+    "metrics"
   ]
 }
