@@ -1,0 +1,52 @@
+{
+  "name": "@puazzi/hono-timing",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "version": "0.0.1",
+  "author": {
+    "name": "Pascal Syma",
+    "email": "npm@syma.dev",
+    "url": "https://syma.dev"
+  },
+  "scripts": {
+    "test": "jest",
+    "format": "npx prettier --write .",
+    "check": "npx prettier --check .",
+    "build": "rimraf dist && tsc",
+    "prerelease": "npm run check && npm run build && npm run test",
+    "release": "npm publish"
+  },
+  "private": false,
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org",
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PassiDel/hono-timing.git"
+  },
+  "bugs": {
+    "url": "https://github.com/PassiDel/hono-timing/issues"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^29.5.2",
+    "@types/node": "^20.3.2",
+    "hono": "3.2.2",
+    "jest": "^29.5.0",
+    "rimraf": "^5.0.1",
+    "ts-jest": "^29.1.0",
+    "typescript": "^5.1.6",
+    "prettier": "^2.8.7"
+  },
+  "peerDependencies": {
+    "hono": "*",
+    "typescript": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}

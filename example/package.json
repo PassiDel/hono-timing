@@ -1,0 +1,23 @@
+{
+  "name": "example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "author": {
+    "name": "Pascal Syma",
+    "email": "npm@syma.dev",
+    "url": "https://syma.dev"
+  },
+  "license": "MIT",
+  "scripts": {
+    "start": "tsx index.ts"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.0.1",
+    "@puazzi/hono-timing": "file:..",
+    "hono": "^3.2.7"
+  },
+  "devDependencies": {
+    "tsx": "^3.12.2"
+  }
+}
