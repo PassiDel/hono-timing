@@ -19,15 +19,17 @@ interface Config {
   enabled: boolean | ((c: Context) => boolean);
   totalDescription: string;
   autoEnd: boolean;
+  crossOrigin: boolean | string;
 }
 
 export const timing = (config?: Partial<Config>): MiddlewareHandler => {
-  const options = {
+  const options: Config = {
     ...{
       total: true,
       enabled: true,
       totalDescription: 'Total Response Time',
-      autoEnd: true
+      autoEnd: true,
+      crossOrigin: false
     },
     ...config
   };
@@ -56,6 +58,12 @@ export const timing = (config?: Partial<Config>): MiddlewareHandler => {
 
     if (enabled) {
       c.res.headers.append('Server-Timing', headers.join(','));
+      if (options.crossOrigin) {
+        c.res.headers.append(
+          'Timing-Allow-Origin',
+          typeof options.crossOrigin === 'string' ? options.crossOrigin : '*'
+        );
+      }
     }
   };
 };
