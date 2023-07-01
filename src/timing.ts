@@ -11,7 +11,7 @@ declare module 'hono' {
 
 interface Timer {
   description?: string;
-  start: ReturnType<typeof process.hrtime>;
+  start: number;
 }
 
 interface Config {
@@ -120,7 +120,7 @@ export const startTime = (c: Context, name: string, description?: string) => {
     );
     return;
   }
-  metrics.timers.set(name, { description, start: process.hrtime() });
+  metrics.timers.set(name, { description, start: performance.now() });
 };
 
 export const endTime = (c: Context, name: string, precision?: number) => {
@@ -137,9 +137,8 @@ export const endTime = (c: Context, name: string, precision?: number) => {
   }
   const { description, start } = metrics.timers.get(name)!!;
 
-  const duration = process.hrtime(start);
-  const value = duration[0] * 1e3 + duration[1] * 1e-6;
+  const duration = performance.now() - start;
 
-  setMetric(c, name, value, description, precision);
+  setMetric(c, name, duration, description, precision);
   metrics.timers.delete(name);
 };
